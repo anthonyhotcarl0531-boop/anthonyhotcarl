@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 2nd Anniversary ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #0d0b10;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* FLOATING HEARTS */
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 20px;
+            opacity: 0;
+            animation: floatHeart 8s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 65%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(5) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) scale(0.7);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.7;
+            }
+
+            80% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.45),
+                    rgba(0, 0, 0, 0.72)
+                ),
+                url("our-picture.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            padding: 30px;
+            animation: appear 2s ease;
+        }
+
+        .small-text {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 12vw, 90px);
+            line-height: 1;
+            font-weight: normal;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 0.55em;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .scroll-text {
+            margin-top: 45px;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        .arrow {
+            display: block;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MESSAGE SECTIONS */
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 25px;
+            position: relative;
+        }
+
+        .section:nth-child(odd) {
+            background: #120d13;
+        }
+
+        .section:nth-child(even) {
+            background: #191017;
+        }
+
+        .message {
+            max-width: 650px;
+            text-align: center;
+        }
+
+        .number {
+            font-size: 70px;
+            opacity: 0.15;
+            font-weight: bold;
+            margin-bottom: -40px;
+        }
+
+        .message h2 {
+            font-size: 35px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .message p {
+            font-size: 19px;
+            line-height: 1.9;
+            color: #eee;
+        }
+
+        .heart-divider {
+            font-size: 28px;
+            margin: 30px 0;
+        }
+
+        /* PHOTO SECTION */
+
+        .photo-section {
+            min-height: 100vh;
+            padding: 80px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(20, 10, 18, 0.8),
+                    rgba(20, 10, 18, 0.95)
+                );
+        }
+
+        .photo-box {
+            max-width: 650px;
+        }
+
+        .photo-box h2 {
+            font-size: 35px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .photo-box img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* FINAL */
+
+        .final {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 25px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.8)
+                ),
+                url("our-picture.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .final-content {
+            max-width: 650px;
+        }
+
+        .final h2 {
+            font-size: 50px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .final p {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        .date {
+            margin-top: 10px;
+            font-size: 14px;
+            letter-spacing: 3px;
+            opacity: 0.7;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .hero {
+                background-position: center;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .small-text {
+                font-size: 11px;
+            }
+
+            .message h2 {
+                font-size: 30px;
+            }
+
+            .message p {
+                font-size: 17px;
+                line-height: 1.8;
+            }
+
+            .final h2 {
+                font-size: 42px;
+            }
+
+            .final p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="hearts">
+        <div class="heart">❤️</div>
+        <div class="heart">♡</div>
+        <div class="heart">❤️</div>
+        <div class="heart">♡</div>
+        <div class="heart">❤️</div>
+    </div>
+
+
+    <!-- OPENING -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                To the love of my life
+            </div>
+
+            <h1>
+                Happy
+                <span>2nd Anniversary</span>
+            </h1>
+
+            <div class="scroll-text">
+                Scroll down
+                <span class="arrow">↓</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE 1 -->
+
+    <section class="section">
+
+        <div class="message">
+
+            <div class="number">01</div>
+
+            <h2>Two Years With You ❤️</h2>
+
+            <div class="heart-divider">♡</div>
+
+            <p>
+                <!-- WRITE YOUR MESSAGE HERE -->
+
+                My love, I honestly can't believe that it has already
+                been two years since we started this journey together.
+                Looking back at everything we have experienced makes me
+                realize how lucky I am to have you in my life.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE 2 -->
+
+    <section class="section">
+
+        <div class="message">
+
+            <div class="number">02</div>
+
+            <h2>Thank You</h2>
+
+            <div class="heart-divider">♡</div>
+
+            <p>
+
+                <!-- WRITE YOUR MESSAGE HERE -->
+
+                Thank you for staying with me through the good days
+                and the difficult ones. Thank you for understanding me
+                even when I don't know how to explain what I feel.
+                Thank you for all the little things you do that make
+                my days better.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE 3 -->
+
+    <section class="section">
+
+        <div class="message">
+
+            <div class="number">03</div>
+
+            <h2>All Our Memories</h2>
+
+            <div class="heart-divider">♡</div>
+
+            <p>
+
+                <!-- WRITE YOUR MESSAGE HERE -->
+
+                We've created so many memories together.
+                Some were funny. Some were difficult.
+                Some were simple moments that probably seemed
+                ordinary at the time.
+
+                But those moments became some of my favorite memories
+                because I experienced them with you.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO -->
+
+    <section class="photo-section">
+
+        <div class="photo-box">
+
+            <h2>My Favorite Person ❤️</h2>
+
+            <img src="our-picture.jpg" alt="Our favorite memory">
+
+            <div class="heart-divider">♡</div>
+
+            <p>
+                <!-- WRITE YOUR CAPTION HERE -->
+
+                If I could choose one person to experience all of
+                life's moments with again I would still choose you.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE 4 -->
+
+    <section class="section">
+
+        <div class="message">
+
+            <div class="number">04</div>
+
+            <h2>And I Still Choose You</h2>
+
+            <div class="heart-divider">♡</div>
+
+            <p>
+
+                <!-- WRITE YOUR MESSAGE HERE -->
+
+                After two years I still want to learn more about you.
+                I still want to hear your stories.
+                I still want to make you laugh.
+                I still want to be beside you when things get hard.
+
+                I don't know exactly what the future will look like.
+                But I know that I want you to be part of it.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="final">
+
+        <div class="final-content">
+
+            <h2>Happy 2nd Anniversary ❤️</h2>
+
+            <p>
+
+                <!-- YOUR FINAL MESSAGE -->
+
+                Two years down and hopefully a lifetime to go.
+
+                Thank you for being my person.
+                Thank you for loving me.
+                Thank you for being you.
+
+                I love you more than words can explain.
+
+            </p>
+
+            <div class="signature">
+                Forever yours,
+                <br>
+                Carl ❤️
+            </div>
+
+            <div class="date">
+                TWO YEARS • ONE LOVE • FOREVER
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
